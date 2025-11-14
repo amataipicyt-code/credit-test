@@ -19,7 +19,7 @@ ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
     PW_LAUNCH_ARGS="--no-sandbox --disable-dev-shm-usage"
 
 # Copy package files
-COPY package.json package-lock.json* ./
+COPY ./package.json ./package-lock.json* ./
 
 # Install dependencies
 RUN npm install
