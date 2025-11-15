@@ -10,8 +10,9 @@ RUN apk add --no-cache curl \
     ttf-freefont
 
 #USER 1001
-RUN mkdir -p /src/.next && chmod -R g+rwX /src
-WORKDIR /src
+RUN mkdir -p /app
+RUN mkdir -p /app/.next && chmod -R g+rwX 
+WORKDIR /app
 
 # Configure Playwright to use system Chromium
 ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 \
