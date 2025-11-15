@@ -9,6 +9,9 @@ RUN apk add --no-cache curl \
     ca-certificates \
     ttf-freefont
 
+# USER 1001
+RUN mkdir -p /app/.next && chmod -R g+rwX /app
+
 WORKDIR /app
 
 # Configure Playwright to use system Chromium
@@ -35,8 +38,6 @@ ENV HOSTNAME "0.0.0.0"
 # Asegura que la carpeta exista y tenga permisos de escritura para grupo
 # Usa un usuario genérico no root compatible con OpenShift
 
-# USER 1001
-RUN mkdir -p /app && chmod -R g+rwX /app
 
 CMD ["npm", "run", "dev"]
 
