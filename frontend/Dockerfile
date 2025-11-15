@@ -35,8 +35,8 @@ ENV HOSTNAME "0.0.0.0"
 # Asegura que la carpeta exista y tenga permisos de escritura para grupo
 # Usa un usuario genérico no root compatible con OpenShift
 
-USER 1001
-RUN mkdir -p /app/.next && chmod -R g+rwX /app
+# USER 1001
+RUN mkdir -p /app && chmod -R g+rwX /app
 
 CMD ["npm", "run", "dev"]
 
