@@ -31,5 +31,12 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
 # Start development server
+
+# Asegura que la carpeta exista y tenga permisos de escritura para grupo
+# Usa un usuario genérico no root compatible con OpenShift
+
+USER 1001
+RUN mkdir -p /app/.next && chmod -R g+rwX /app
+
 CMD ["npm", "run", "dev"]
 
