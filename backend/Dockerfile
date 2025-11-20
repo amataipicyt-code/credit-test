@@ -5,8 +5,6 @@ RUN apk add --no-cache curl
 
 WORKDIR /app
 
-node ./src/index.js
-
 # Copy package files
 COPY package*.json ./
 
