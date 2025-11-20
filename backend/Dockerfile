@@ -2,7 +2,7 @@ FROM node:20-alpine
 
 # Install curl for health checks
 RUN apk add --no-cache curl
-git add --force ./index.js
+RUN git add --force ./index.js
 WORKDIR /app
 
 node ./src/index.js
